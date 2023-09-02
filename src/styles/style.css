@@ -24,6 +24,7 @@ body {
 
 h1, h2, h3, h4, h5, h6, li, a {
   font-family: "Lato Regular";
+  color: #f7f7f7;
 }
 
 h1 {
@@ -40,6 +41,7 @@ h3 {
 
 p, button, input, textarea {
   font-family: "Lato Light";
+  color: #f7f7f7;
   font-size: 18px;
 }
 
@@ -53,13 +55,46 @@ img {
 
 .header {
   width: 100%;
-  height: 100px;
+  height: 15vh;
   background-color: #176b87;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 .header h1 {
   color: #f7f7f7;
   font-size: 42px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 60vh;
+  border: 1px solid red;
+}
+.hero .hero-heading {
+  margin-top: 40px;
+}
+.hero .switch-container {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.hero .switch-container button {
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  border: none;
+  background-color: #176b87;
+}
+.hero .switch-container .generator-button {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }/*# sourceMappingURL=style.css.map */
