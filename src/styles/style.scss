@@ -13,13 +13,13 @@ html {
 // Bolder font face, mainly used for headings.
 @font-face {
   font-family: "Lato Regular";
-  src: url(src/assets/fonts/Lato-Regular.ttf);
+  src: url(/src/assets/fonts/lato/Lato-Regular.ttf);
 }
 
 // Lighter font face, mainly used for paragraphs.
 @font-face {
   font-family: "Lato Light";
-  src: url(src/assets/fonts/Lato-Light.ttf);
+  src: url(/src/assets/fonts/lato/Lato-Light.ttf);
 }
 
 // Variables
@@ -31,6 +31,31 @@ $white-color: #f7f7f7;
 body {
   overflow: hidden;
   background-color: $navy-color;
+}
+
+// prettier-ignore
+h1, h2, h3, h4, h5, h6, li, a {
+    font-family: "Lato Regular";
+    // color: $variable-name;
+  }
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+// prettier-ignore
+p, button, input, textarea {
+  font-family: "Lato Light";
+  // color: $variable-name;
+  font-size: 18px;
 }
 
 a {

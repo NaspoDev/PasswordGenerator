@@ -9,9 +9,38 @@ html {
   scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: "Lato Regular";
+  src: url(/src/assets/fonts/lato/Lato-Regular.ttf);
+}
+@font-face {
+  font-family: "Lato Light";
+  src: url(/src/assets/fonts/lato/Lato-Light.ttf);
+}
 body {
   overflow: hidden;
   background-color: #053b50;
+}
+
+h1, h2, h3, h4, h5, h6, li, a {
+  font-family: "Lato Regular";
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+p, button, input, textarea {
+  font-family: "Lato Light";
+  font-size: 18px;
 }
 
 a {
