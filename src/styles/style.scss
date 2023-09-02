@@ -23,10 +23,15 @@ html {
 }
 
 // Variables
+// Theme colors
 $navy-color: #053b50;
 $blue-color: #176b87;
 $teal-color: #64ccc5;
 $white-color: #f7f7f7;
+
+// Other colors
+$grey-color: #a9a9a9;
+$light-grey-color: #d3d3d3;
 
 body {
   overflow: hidden;
@@ -51,8 +56,12 @@ h3 {
   font-size: 24px;
 }
 
+label {
+  font-size: 18px;
+}
+
 // prettier-ignore
-p, button, input, textarea {
+p, button, input, textarea, label {
   font-family: "Lato Light";
   color: $white-color;
   font-size: 18px;
@@ -73,6 +82,8 @@ img {
   align-items: $align;
 }
 
+// Header
+
 .header {
   width: 100%;
   height: 15vh;
@@ -85,20 +96,27 @@ img {
   }
 }
 
+// Hero
+
 .hero {
   @include flexCenter(column, flex-start);
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   border: 1px solid red;
+
+  // Hero Heading
 
   .hero-heading {
     margin-top: 40px;
   }
 
+  // Switch Container
+
   .switch-container {
     width: auto;
     height: auto;
     @include flexCenter(row, center, center);
+    margin-top: 30px;
 
     button {
       cursor: pointer;
@@ -106,11 +124,88 @@ img {
       height: 40px;
       border: none;
       background-color: $blue-color;
+      opacity: 0.6;
     }
 
     .generator-button {
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
     }
+
+    .validator-button {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    // applied to the button that is currently selected
+    .selected {
+      opacity: 1;
+      border: 1px solid $teal-color;
+    }
   }
+
+  // Application Placeholder
+
+  .app-type-placeholder {
+    position: relative;
+    width: 50%;
+    height: 70%;
+    border: 1px solid white;
+
+    .password-generator,
+    .password-validator {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      @include flexCenter(column, flex-start, center);
+      padding-top: 50px;
+    }
+
+    // Password Generator
+
+    .password-generator {
+      .password-display {
+        width: 50%;
+        height: auto;
+        margin-bottom: 60px;
+        background-color: $white-color;
+        border-radius: 10px;
+        @include flexCenter(row, space-between, center);
+        padding: 10px 10px;
+
+        h3 {
+          font-size: 32px;
+          color: $blue-color;
+        }
+
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      .form-field {
+        margin-bottom: 30px;
+      }
+
+      label span {
+        color: $light-grey-color;
+      }
+
+      .length-field {
+        @include flexCenter(column, center, center);
+
+        .top {
+          @include flexCenter(row, space-between, center);
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+// applied to an element to hide it.
+.hidden {
+  display: none !important;
 }

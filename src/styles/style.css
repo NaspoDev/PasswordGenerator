@@ -39,7 +39,11 @@ h3 {
   font-size: 24px;
 }
 
-p, button, input, textarea {
+label {
+  font-size: 18px;
+}
+
+p, button, input, textarea, label {
   font-family: "Lato Light";
   color: #f7f7f7;
   font-size: 18px;
@@ -73,7 +77,7 @@ img {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   border: 1px solid red;
 }
 .hero .hero-heading {
@@ -86,6 +90,7 @@ img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
 }
 .hero .switch-container button {
   cursor: pointer;
@@ -93,8 +98,78 @@ img {
   height: 40px;
   border: none;
   background-color: #176b87;
+  opacity: 0.6;
 }
 .hero .switch-container .generator-button {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+}
+.hero .switch-container .validator-button {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.hero .switch-container .selected {
+  opacity: 1;
+  border: 1px solid #64ccc5;
+}
+.hero .app-type-placeholder {
+  position: relative;
+  width: 50%;
+  height: 70%;
+  border: 1px solid white;
+}
+.hero .app-type-placeholder .password-generator,
+.hero .app-type-placeholder .password-validator {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 50px;
+}
+.hero .app-type-placeholder .password-generator .password-display {
+  width: 50%;
+  height: auto;
+  margin-bottom: 60px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+}
+.hero .app-type-placeholder .password-generator .password-display h3 {
+  font-size: 32px;
+  color: #176b87;
+}
+.hero .app-type-placeholder .password-generator .password-display img {
+  width: 30px;
+  height: 30px;
+}
+.hero .app-type-placeholder .password-generator .form-field {
+  margin-bottom: 30px;
+}
+.hero .app-type-placeholder .password-generator label span {
+  color: #d3d3d3;
+}
+.hero .app-type-placeholder .password-generator .length-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero .app-type-placeholder .password-generator .length-field .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.hidden {
+  display: none !important;
 }/*# sourceMappingURL=style.css.map */

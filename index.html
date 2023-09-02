@@ -22,20 +22,33 @@
 
         <!-- Switch -->
         <div class="switch-container">
-          <button class="generator-button">Generator</button>
+          <button class="generator-button selected">Generator</button>
           <button class="validator-button">Validator</button>
         </div>
 
-        <!-- Generator -->
+        <!-- Where the app type will sit. (Generator or Validator) -->
+        <div class="app-type-placeholder">
+          <!-- Generator -->
         <div class="password-generator">
-          <form action="">
+          <div class="password-display">
+            <h3>tYP?Bni8RX&Fn5YS</h3>
+            <img src="/src/assets/images/refresh_icon.webp" alt="Refresh">
+          </div>
+
+          <form class="password-generator-form" action="">
             <div class="length-field form-field">
-              <label for="length-slider">Length</label>
-              <input type="range" min="4" max="40" value="16" id="length-slider">
+              <div class="top">
+                <label for="length-slider">Length</label>
+                <!-- length-slider-value to be adjusted through ts -->
+                <p class="length-slider-value">16</p>
+              </div>
+              <div class="bottom">
+                <input type="range" min="4" max="40" value="16" id="length-slider">
+              </div>
             </div>
             <div class="letters-field form-field">
-              <label for="letters-checkbox">Letters</label>
               <input type="checkbox" id="letters-checkbox">
+              <label for="letters-checkbox">Letters <span>(ex. Aa)</span></label>
             </div>
             <div class="numbers-field form-field">
               <label for="numbers-checkbox">Numbers</label>
@@ -50,13 +63,14 @@
       </div>
 
       <!-- Validator -->
-      <div class="password-validator">
+      <div class="password-validator hidden">
         <form action="">
           <div class="password-field form-field">
             <label for="password-input">Password</label>
             <input type="password" id="password-input">
           </div>
         </form>
+        </div>
     </section>
 
     <!-- Footer -->
