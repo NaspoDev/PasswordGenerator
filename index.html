@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <section id="header">
+      <div class="header">
+        <h1>Password Generator</h1>
+      </div>
+    </section>
+    <section id="hero">
+      <div class="hero">
+        <div class="switch-container">
+          <button>Generate</button>
+          <button>Validate</button>
+        </div>
+
+        <!-- Generator -->
+        <div class="password-generator">
+          <form action="">
+            <div class="length-field form-field">
+              <label for="length-slider">Length</label>
+              <input type="range" min="4" max="40" value="16" id="length-slider">
+            </div>
+            <div class="letters-field form-field">
+              <label for="letters-checkbox">Uppercase</label>
+              <input type="checkbox" id="letters-checkbox">
+            </div>
+            <div class="numbers-field form-field">
+              <label for="numbers-checkbox">Numbers</label>
+              <input type="checkbox" id="numbers-checkbox">
+            </div>
+            <div class="symbols-field form-field">
+              <label for="symbols-checkbox">Symbols</label>
+              <input type="checkbox" id="symbols-checkbox">
+          </form>
+        </div>
+        <div class="password-validator"></div>
+      </div>
+
+      <!-- Validator -->
+      <div class="password-validator">
+        <form action="">
+          <div class="password-field form-field">
+            <label for="password-input">Password</label>
+            <input type="password" id="password-input">
+          </div>
+        </form>
+    </section>
+  </body>
+</html>
