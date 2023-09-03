@@ -65,6 +65,7 @@ p, button, input, textarea, label {
 
 a {
   text-decoration: none;
+  color: $teal-color;
 }
 
 img {
@@ -269,6 +270,8 @@ label {
 
 .footer {
   @include flexCenter(row, center, center);
+  width: 100%;
+  height: 10vh;
 }
 
 // applied to an element to hide it.

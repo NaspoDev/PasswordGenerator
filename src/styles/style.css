@@ -47,6 +47,7 @@ p, button, input, textarea, label {
 
 a {
   text-decoration: none;
+  color: #64ccc5;
 }
 
 img {
@@ -225,6 +226,8 @@ label {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 10vh;
 }
 
 .hidden {
