@@ -220,6 +220,22 @@ label {
   border: none;
   border-radius: 50%;
 }
+.hero .background-card .feature-container .password-validator .password-validator-form {
+  border: 1px solid #f7f7f7;
+}
+.hero .background-card .feature-container .password-validator .password-field input[type=text] {
+  color: #176b87;
+  width: 70%;
+  height: auto;
+  margin-bottom: 60px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
 
 .footer {
   display: flex;

@@ -161,7 +161,6 @@ label {
       position: relative;
       width: 90%;
       height: 90%;
-      // border: 1px solid white;
 
       // generator and validator common styles
       .password-generator,
@@ -259,6 +258,24 @@ label {
                 }
               }
             }
+          }
+        }
+      }
+
+      .password-validator {
+        .password-validator-form {
+          border: 1px solid $white-color;
+        }
+        .password-field {
+          input[type="text"] {
+            color: $blue-color;
+            width: 70%;
+            height: auto;
+            margin-bottom: 60px;
+            background-color: $white-color;
+            border-radius: 10px;
+            @include flexCenter(row, space-between, center);
+            padding: 10px 15px;
           }
         }
       }
