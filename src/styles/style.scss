@@ -207,6 +207,10 @@ label {
                 color: $light-grey-color;
               }
             }
+
+            input[type="checkbox"] {
+              accent-color: $teal-color;
+            }
           }
 
           .length-field {
@@ -224,6 +228,8 @@ label {
 
             .bottom {
               width: 100%;
+
+              // Styling only works for firefox
               input[type="range"] {
                 background: transparent;
                 cursor: pointer;
