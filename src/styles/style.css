@@ -64,7 +64,6 @@ label {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
 }
 .header .inner-header {
   width: 35%;
@@ -85,7 +84,7 @@ label {
 .hero {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 70vh;
@@ -93,7 +92,7 @@ label {
 .hero .background-card {
   background-color: #176b87;
   width: 40%;
-  height: 80%;
+  height: 90%;
   border-radius: 50px;
   display: flex;
   flex-direction: column;

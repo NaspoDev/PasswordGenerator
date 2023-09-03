@@ -44,7 +44,7 @@
                   class="password-refresh-icon"
                 />
               </div>
-              <form class="password-generator-form" action="">
+              <form action="" class="password-generator-form">
                 <div class="length-field form-field">
                   <div class="top">
                     <label for="length-slider">Length</label>
@@ -64,15 +64,21 @@
                 <div class="letters-field form-field">
                   <input type="checkbox" id="letters-checkbox" />
                   <label for="letters-checkbox"
-                    >Letters <span>(ex. Aa)</span></label
+                    >Include Letters <span>(ex. Aa)</span></label
                   >
                 </div>
                 <div class="numbers-field form-field">
-                  <label for="numbers-checkbox">Numbers</label>
+                  <label for="numbers-checkbox">Include Numbers</label>
                   <input type="checkbox" id="numbers-checkbox" />
                 </div>
                 <div class="symbols-field form-field">
-                  <label for="symbols-checkbox">Symbols</label>
+                  <label for="symbols-checkbox">Include Symbols</label>
+                  <input type="checkbox" id="symbols-checkbox" />
+                </div>
+                <div class="amibiguous-field form-field">
+                  <label for="ambiguous-checkbox"
+                    >Include Ambiguous Characters</label
+                  >
                   <input type="checkbox" id="symbols-checkbox" />
                 </div>
               </form>
