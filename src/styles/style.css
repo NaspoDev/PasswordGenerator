@@ -39,10 +39,6 @@ h3 {
   font-size: 24px;
 }
 
-label {
-  font-size: 18px;
-}
-
 p, button, input, textarea, label {
   font-family: "Lato Light";
   color: #f7f7f7;
@@ -57,18 +53,33 @@ img {
   max-width: 100%;
 }
 
+label {
+  font-size: 20px;
+}
+
 .header {
   width: 100%;
-  height: 15vh;
-  background-color: #176b87;
+  height: 20vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
 }
-.header h1 {
+.header .inner-header {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .inner-header h1 {
   color: #f7f7f7;
   font-size: 42px;
+}
+.header .inner-header img {
+  width: 120px;
 }
 
 .hero {
@@ -78,12 +89,19 @@ img {
   align-items: center;
   width: 100%;
   height: 70vh;
-  border: 1px solid red;
 }
-.hero .hero-heading {
-  margin-top: 40px;
+.hero .background-card {
+  background-color: #176b87;
+  width: 40%;
+  height: 80%;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(40px 40px 10px rgba(0, 0, 0, 0.25));
 }
-.hero .switch-container {
+.hero .background-card .switch-container {
   width: auto;
   height: auto;
   display: flex;
@@ -92,34 +110,33 @@ img {
   align-items: center;
   margin-top: 30px;
 }
-.hero .switch-container button {
+.hero .background-card .switch-container button {
   cursor: pointer;
   width: 100px;
   height: 40px;
   border: none;
-  background-color: #176b87;
+  background-color: #64ccc5;
   opacity: 0.6;
 }
-.hero .switch-container .generator-button {
+.hero .background-card .switch-container .generator-button {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
-.hero .switch-container .validator-button {
+.hero .background-card .switch-container .validator-button {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-.hero .switch-container .selected {
+.hero .background-card .switch-container .selected {
   opacity: 1;
   border: 1px solid #64ccc5;
 }
-.hero .application-hero {
+.hero .background-card .feature-container {
   position: relative;
-  width: 50%;
-  height: 70%;
-  border: 1px solid white;
+  width: 90%;
+  height: 90%;
 }
-.hero .application-hero .password-generator,
-.hero .application-hero .password-validator {
+.hero .background-card .feature-container .password-generator,
+.hero .background-card .feature-container .password-validator {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -129,8 +146,8 @@ img {
   align-items: center;
   padding-top: 50px;
 }
-.hero .application-hero .password-generator .password-display {
-  width: 50%;
+.hero .background-card .feature-container .password-generator .password-display {
+  width: 70%;
   height: auto;
   margin-bottom: 60px;
   background-color: #f7f7f7;
@@ -139,35 +156,42 @@ img {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 10px;
+  padding: 10px 15px;
 }
-.hero .application-hero .password-generator .password-display h3 {
+.hero .background-card .feature-container .password-generator .password-display .password-display-text {
   font-size: 32px;
   color: #176b87;
 }
-.hero .application-hero .password-generator .password-display img {
+.hero .background-card .feature-container .password-generator .password-display .password-refresh-icon {
   width: 30px;
   height: 30px;
 }
-.hero .application-hero .password-generator .form-field {
+.hero .background-card .feature-container .password-generator .form-field {
   margin-bottom: 30px;
 }
-.hero .application-hero .password-generator label span {
+.hero .background-card .feature-container .password-generator label span {
   color: #d3d3d3;
 }
-.hero .application-hero .password-generator .length-field {
+.hero .background-card .feature-container .password-generator .length-field {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.hero .application-hero .password-generator .length-field .top {
+.hero .background-card .feature-container .password-generator .length-field .top {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   margin-bottom: 10px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .hidden {

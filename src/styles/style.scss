@@ -56,10 +56,6 @@ h3 {
   font-size: 24px;
 }
 
-label {
-  font-size: 18px;
-}
-
 // prettier-ignore
 p, button, input, textarea, label {
   font-family: "Lato Light";
@@ -75,6 +71,10 @@ img {
   max-width: 100%;
 }
 
+label {
+  font-size: 20px;
+}
+
 @mixin flexCenter($direction: row, $justify: center, $align: center) {
   display: flex;
   flex-direction: $direction;
@@ -86,13 +86,23 @@ img {
 
 .header {
   width: 100%;
-  height: 15vh;
-  background-color: $blue-color;
-  @include flexCenter(row);
+  height: 20vh;
+  @include flexCenter(row, center, center);
+  margin-bottom: 50px;
 
-  h1 {
-    color: $white-color;
-    font-size: 42px;
+  .inner-header {
+    width: 35%;
+    height: 100%;
+    @include flexCenter(row, space-between, center);
+
+    h1 {
+      color: $white-color;
+      font-size: 42px;
+    }
+
+    img {
+      width: 120px;
+    }
   }
 }
 
@@ -102,107 +112,118 @@ img {
   @include flexCenter(column, flex-start);
   width: 100%;
   height: 70vh;
-  border: 1px solid red;
+  // border: 1px solid red;
 
-  // Hero Heading
+  .background-card {
+    background-color: $blue-color;
+    width: 40%;
+    height: 80%;
+    border-radius: 50px;
+    @include flexCenter(column, center, center);
+    filter: drop-shadow(40px 40px 10px rgba(0, 0, 0, 0.25));
 
-  .hero-heading {
-    margin-top: 40px;
-  }
+    // Switch Container
 
-  // Switch Container
+    .switch-container {
+      width: auto;
+      height: auto;
+      @include flexCenter(row, center, center);
+      margin-top: 30px;
 
-  .switch-container {
-    width: auto;
-    height: auto;
-    @include flexCenter(row, center, center);
-    margin-top: 30px;
-
-    button {
-      cursor: pointer;
-      width: 100px;
-      height: 40px;
-      border: none;
-      background-color: $blue-color;
-      opacity: 0.6;
-    }
-
-    .generator-button {
-      border-top-left-radius: 10px;
-      border-bottom-left-radius: 10px;
-    }
-
-    .validator-button {
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px;
-    }
-
-    // applied to the button that is currently selected
-    .selected {
-      opacity: 1;
-      border: 1px solid $teal-color;
-    }
-  }
-
-  // Application Placeholder
-
-  .application-hero {
-    position: relative;
-    width: 50%;
-    height: 70%;
-    border: 1px solid white;
-
-    .password-generator,
-    .password-validator {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      @include flexCenter(column, flex-start, center);
-      padding-top: 50px;
-    }
-
-    // Password Generator
-
-    .password-generator {
-      .password-display {
-        width: 50%;
-        height: auto;
-        margin-bottom: 60px;
-        background-color: $white-color;
-        border-radius: 10px;
-        @include flexCenter(row, space-between, center);
-        padding: 10px 10px;
-
-        h3 {
-          font-size: 32px;
-          color: $blue-color;
-        }
-
-        img {
-          width: 30px;
-          height: 30px;
-        }
+      button {
+        cursor: pointer;
+        width: 100px;
+        height: 40px;
+        border: none;
+        background-color: $teal-color;
+        opacity: 0.6;
       }
 
-      .form-field {
-        margin-bottom: 30px;
+      .generator-button {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
       }
 
-      label span {
-        color: $light-grey-color;
+      .validator-button {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
       }
 
-      .length-field {
-        @include flexCenter(column, center, center);
+      // applied to the button that is currently selected
+      .selected {
+        opacity: 1;
+        border: 1px solid $teal-color;
+      }
+    }
 
-        .top {
+    // Application Placeholder
+
+    .feature-container {
+      position: relative;
+      width: 90%;
+      height: 90%;
+      // border: 1px solid white;
+
+      // generator and validator common styles
+      .password-generator,
+      .password-validator {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        @include flexCenter(column, flex-start, center);
+        padding-top: 50px;
+      }
+
+      // Password Generator
+
+      .password-generator {
+        // Password Display
+        .password-display {
+          width: 70%;
+          height: auto;
+          margin-bottom: 60px;
+          background-color: $white-color;
+          border-radius: 10px;
           @include flexCenter(row, space-between, center);
-          width: 100%;
-          margin-bottom: 10px;
+          padding: 10px 15px;
+
+          .password-display-text {
+            font-size: 32px;
+            color: $blue-color;
+          }
+
+          .password-refresh-icon {
+            width: 30px;
+            height: 30px;
+          }
+        }
+
+        .form-field {
+          margin-bottom: 30px;
+        }
+
+        label span {
+          color: $light-grey-color;
+        }
+
+        .length-field {
+          @include flexCenter(column, center, center);
+
+          .top {
+            @include flexCenter(row, space-between, center);
+            width: 100%;
+            margin-bottom: 10px;
+          }
         }
       }
     }
   }
+}
+
+// Footer
+
+.footer {
+  @include flexCenter(row, center, center);
 }
 
 // applied to an element to hide it.
