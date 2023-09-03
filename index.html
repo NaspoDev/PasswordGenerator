@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generator</title>
 
-    <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="stylesheet" href="src/styles/style.css" />
   </head>
   <body>
     <!-- Header -->
@@ -18,7 +18,7 @@
     <!-- Hero -->
     <section id="hero">
       <div class="hero">
-          <h2 class="hero-heading">Generate and validate passwords!</h2>
+        <h2 class="hero-heading">Generate and validate passwords!</h2>
 
         <!-- Switch -->
         <div class="switch-container">
@@ -26,58 +26,65 @@
           <button class="validator-button">Validator</button>
         </div>
 
-        <!-- Where the app type will sit. (Generator or Validator) -->
-        <div class="app-type-placeholder">
+        <!-- The function part of the application. (Generator or Validator) -->
+        <div class="application-hero">
           <!-- Generator -->
-        <div class="password-generator">
-          <div class="password-display">
-            <h3>tYP?Bni8RX&Fn5YS</h3>
-            <img src="/src/assets/images/refresh_icon.webp" alt="Refresh">
+          <div class="password-generator">
+            <div class="password-display">
+              <h3>tYP?Bni8RX&Fn5YS</h3>
+              <img src="/src/assets/images/refresh_icon.png" alt="Refresh" />
+            </div>
+
+            <form class="password-generator-form" action="">
+              <div class="length-field form-field">
+                <div class="top">
+                  <label for="length-slider">Length</label>
+                  <!-- length-slider-value to be adjusted through ts -->
+                  <p class="length-slider-value">16</p>
+                </div>
+                <div class="bottom">
+                  <input
+                    type="range"
+                    min="4"
+                    max="40"
+                    value="16"
+                    id="length-slider"
+                  />
+                </div>
+              </div>
+              <div class="letters-field form-field">
+                <input type="checkbox" id="letters-checkbox" />
+                <label for="letters-checkbox"
+                  >Letters <span>(ex. Aa)</span></label
+                >
+              </div>
+              <div class="numbers-field form-field">
+                <label for="numbers-checkbox">Numbers</label>
+                <input type="checkbox" id="numbers-checkbox" />
+              </div>
+              <div class="symbols-field form-field">
+                <label for="symbols-checkbox">Symbols</label>
+                <input type="checkbox" id="symbols-checkbox" />
+              </div>
+            </form>
           </div>
 
-          <form class="password-generator-form" action="">
-            <div class="length-field form-field">
-              <div class="top">
-                <label for="length-slider">Length</label>
-                <!-- length-slider-value to be adjusted through ts -->
-                <p class="length-slider-value">16</p>
+          <!-- Validator -->
+          <div class="password-validator hidden">
+            <form action="">
+              <div class="password-field form-field">
+                <label for="password-input">Password</label>
+                <input type="password" id="password-input" />
               </div>
-              <div class="bottom">
-                <input type="range" min="4" max="40" value="16" id="length-slider">
-              </div>
-            </div>
-            <div class="letters-field form-field">
-              <input type="checkbox" id="letters-checkbox">
-              <label for="letters-checkbox">Letters <span>(ex. Aa)</span></label>
-            </div>
-            <div class="numbers-field form-field">
-              <label for="numbers-checkbox">Numbers</label>
-              <input type="checkbox" id="numbers-checkbox">
-            </div>
-            <div class="symbols-field form-field">
-              <label for="symbols-checkbox">Symbols</label>
-              <input type="checkbox" id="symbols-checkbox">
-          </form>
+            </form>
+          </div>
         </div>
-        <div class="password-validator"></div>
       </div>
-
-      <!-- Validator -->
-      <div class="password-validator hidden">
-        <form action="">
-          <div class="password-field form-field">
-            <label for="password-input">Password</label>
-            <input type="password" id="password-input">
-          </div>
-        </form>
-        </div>
     </section>
 
     <!-- Footer -->
     <section id="footer">
-      <div class="footer">
-
-      </div>
+      <div class="footer"></div>
     </section>
   </body>
 </html>

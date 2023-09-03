@@ -112,14 +112,14 @@ img {
   opacity: 1;
   border: 1px solid #64ccc5;
 }
-.hero .app-type-placeholder {
+.hero .application-hero {
   position: relative;
   width: 50%;
   height: 70%;
   border: 1px solid white;
 }
-.hero .app-type-placeholder .password-generator,
-.hero .app-type-placeholder .password-validator {
+.hero .application-hero .password-generator,
+.hero .application-hero .password-validator {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -129,7 +129,7 @@ img {
   align-items: center;
   padding-top: 50px;
 }
-.hero .app-type-placeholder .password-generator .password-display {
+.hero .application-hero .password-generator .password-display {
   width: 50%;
   height: auto;
   margin-bottom: 60px;
@@ -141,27 +141,27 @@ img {
   align-items: center;
   padding: 10px 10px;
 }
-.hero .app-type-placeholder .password-generator .password-display h3 {
+.hero .application-hero .password-generator .password-display h3 {
   font-size: 32px;
   color: #176b87;
 }
-.hero .app-type-placeholder .password-generator .password-display img {
+.hero .application-hero .password-generator .password-display img {
   width: 30px;
   height: 30px;
 }
-.hero .app-type-placeholder .password-generator .form-field {
+.hero .application-hero .password-generator .form-field {
   margin-bottom: 30px;
 }
-.hero .app-type-placeholder .password-generator label span {
+.hero .application-hero .password-generator label span {
   color: #d3d3d3;
 }
-.hero .app-type-placeholder .password-generator .length-field {
+.hero .application-hero .password-generator .length-field {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.hero .app-type-placeholder .password-generator .length-field .top {
+.hero .application-hero .password-generator .length-field .top {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
