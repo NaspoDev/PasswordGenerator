@@ -44,7 +44,10 @@
                   class="password-refresh-icon"
                 />
               </div>
+
+              <!-- Generator Form -->
               <form action="" class="password-generator-form">
+                <!-- Length field -->
                 <div class="length-field form-field">
                   <div class="top">
                     <label for="length-slider">Length</label>
@@ -61,25 +64,34 @@
                     />
                   </div>
                 </div>
+                <!-- Letters field -->
                 <div class="letters-field form-field">
                   <input type="checkbox" id="letters-checkbox" />
                   <label for="letters-checkbox"
                     >Include Letters <span>(ex. Aa)</span></label
                   >
                 </div>
+                <!-- Numbers field -->
                 <div class="numbers-field form-field">
-                  <label for="numbers-checkbox">Include Numbers</label>
                   <input type="checkbox" id="numbers-checkbox" />
-                </div>
-                <div class="symbols-field form-field">
-                  <label for="symbols-checkbox">Include Symbols</label>
-                  <input type="checkbox" id="symbols-checkbox" />
-                </div>
-                <div class="amibiguous-field form-field">
-                  <label for="ambiguous-checkbox"
-                    >Include Ambiguous Characters</label
+                  <label for="numbers-checkbox"
+                    >Include Numbers <span>(ex. 123)</span></label
                   >
+                </div>
+                <!-- Symbols field -->
+                <div class="symbols-field form-field">
                   <input type="checkbox" id="symbols-checkbox" />
+                  <label for="symbols-checkbox"
+                    >Include Symbols <span>(ex. @#$%)</span></label
+                  >
+                </div>
+                <!-- Ambiguous Characters field -->
+                <div class="amibiguous-field form-field">
+                  <input type="checkbox" id="symbols-checkbox" />
+                  <label for="ambiguous-checkbox"
+                    >Include Ambiguous Characters
+                    <span>(ex. ![]{};'',.)</span></label
+                  >
                 </div>
               </form>
             </div>

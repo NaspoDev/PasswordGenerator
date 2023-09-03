@@ -165,25 +165,56 @@ label {
   width: 30px;
   height: 30px;
 }
-.hero .background-card .feature-container .password-generator .form-field {
+.hero .background-card .feature-container .password-generator .password-generator-form .form-field {
   margin-bottom: 30px;
 }
-.hero .background-card .feature-container .password-generator label span {
+.hero .background-card .feature-container .password-generator .password-generator-form .form-field label {
+  padding-left: 10px;
+}
+.hero .background-card .feature-container .password-generator .password-generator-form .form-field label span {
   color: #d3d3d3;
 }
-.hero .background-card .feature-container .password-generator .length-field {
+.hero .background-card .feature-container .password-generator .password-generator-form .length-field {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
-.hero .background-card .feature-container .password-generator .length-field .top {
+.hero .background-card .feature-container .password-generator .password-generator-form .length-field .top {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   margin-bottom: 10px;
+  width: 100%;
+}
+.hero .background-card .feature-container .password-generator .password-generator-form .length-field .top label {
+  padding: 0;
+}
+.hero .background-card .feature-container .password-generator .password-generator-form .length-field .bottom {
+  width: 100%;
+}
+.hero .background-card .feature-container .password-generator .password-generator-form .length-field .bottom input[type=range] {
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+.hero .background-card .feature-container .password-generator .password-generator-form .length-field .bottom input[type=range]::-webkit-slider-runnable-track, .hero .background-card .feature-container .password-generator .password-generator-form .length-field .bottom input[type=range]::-moz-range-track {
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  height: 4px;
+}
+.hero .background-card .feature-container .password-generator .password-generator-form .length-field .bottom input[type=range]::-moz-range-progress {
+  background-color: #64ccc5;
+  border-radius: 20px;
+  height: 4px;
+}
+.hero .background-card .feature-container .password-generator .password-generator-form .length-field .bottom input[type=range]::-webkit-slider-thumb, .hero .background-card .feature-container .password-generator .password-generator-form .length-field .bottom input[type=range]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  background: #64ccc5;
+  border: none;
+  border-radius: 50%;
 }
 
 .footer {
