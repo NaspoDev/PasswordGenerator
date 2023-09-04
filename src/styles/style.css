@@ -221,11 +221,11 @@ label {
   border-radius: 50%;
 }
 .hero .background-card .feature-container .password-validator .password-validator-form {
-  border: 1px solid #f7f7f7;
+  width: 70%;
 }
 .hero .background-card .feature-container .password-validator .password-field input[type=text] {
   color: #176b87;
-  width: 70%;
+  width: 100%;
   height: auto;
   margin-bottom: 60px;
   background-color: #f7f7f7;
@@ -235,6 +235,21 @@ label {
   justify-content: space-between;
   align-items: center;
   padding: 10px 15px;
+}
+.hero .background-card .feature-container .password-validator .strength-reading {
+  margin-top: 40px;
+}
+.hero .background-card .feature-container .password-validator .strength-reading .strength-value-1 {
+  color: rgb(189, 66, 66);
+}
+.hero .background-card .feature-container .password-validator .strength-reading .strength-value-2 {
+  color: rgb(189, 189, 66);
+}
+.hero .background-card .feature-container .password-validator .strength-reading .strength-value-3 {
+  color: rgb(66, 189, 66);
+}
+.hero .background-card .feature-container .password-validator .strength-reading .strength-value-4 {
+  color: rgb(5, 117, 33);
 }
 
 .footer {

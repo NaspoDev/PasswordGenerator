@@ -264,18 +264,44 @@ label {
 
       .password-validator {
         .password-validator-form {
-          border: 1px solid $white-color;
+          width: 70%;
         }
         .password-field {
           input[type="text"] {
             color: $blue-color;
-            width: 70%;
+            width: 100%;
             height: auto;
             margin-bottom: 60px;
             background-color: $white-color;
             border-radius: 10px;
             @include flexCenter(row, space-between, center);
             padding: 10px 15px;
+          }
+        }
+
+        // Strength Reading
+        .strength-reading {
+          margin-top: 40px;
+
+          // Strength values applied through ts
+          // weak
+          .strength-value-1 {
+            color: rgb(189, 66, 66);
+          }
+
+          // moderate
+          .strength-value-2 {
+            color: rgb(189, 189, 66);
+          }
+
+          // strong
+          .strength-value-3 {
+            color: rgb(66, 189, 66);
+          }
+
+          // very strong
+          .strength-value-4 {
+            color: rgb(5, 117, 33);
           }
         }
       }
