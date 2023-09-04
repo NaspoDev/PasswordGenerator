@@ -8,12 +8,12 @@
     // Use standard js syntax.
     "module": "commonjs",
     // Where our compiled js files will be stored. Convention to put them in a folder called "dist". (Created automatically on first compile).
-    "outDir": "/src/dist",
+    "outDir": "src/dist",
     // Strict type checking.
     "strict": true,
     "esModuleInterop": true,
     // Root directory of ts files. Not required, but convention to but source code in a folder called "src".
-    "rootDir": "/src/typescript",
+    "rootDir": "src/typescript",
     // Remove comments in compiled js code.
     "removeComments": true,
     // Do not compile to js if there is an error in the code.
