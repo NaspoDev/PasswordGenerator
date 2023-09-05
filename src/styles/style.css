@@ -165,6 +165,7 @@ label {
 .hero .background-card .feature-container .password-generator .password-display .password-refresh-icon {
   width: 30px;
   height: 30px;
+  cursor: pointer;
 }
 .hero .background-card .feature-container .password-generator .password-generator-form .form-field {
   margin-bottom: 30px;
