@@ -45,7 +45,7 @@
                   <input
                     type="text"
                     class="password-display-text"
-                    id="passworld-display-text"
+                    id="password-display-text"
                     name="generatedPassword"
                   />
                 </form>
@@ -62,7 +62,11 @@
               </div>
 
               <!-- Generator Form -->
-              <form action="" class="password-generator-form">
+              <form
+                action=""
+                class="password-generator-form"
+                id="password-generator-form"
+              >
                 <!-- Length field -->
                 <div class="length-field form-field">
                   <div class="top">
@@ -107,8 +111,8 @@
                   >
                 </div>
                 <!-- Ambiguous Characters field -->
-                <div class="amibiguous-field form-field">
-                  <input type="checkbox" id="symbols-checkbox" />
+                <div class="ambiguous-field form-field">
+                  <input type="checkbox" id="ambiguous-checkbox" />
                   <label for="ambiguous-checkbox"
                     >Include Ambiguous Characters
                     <span>(ex. ![]{};'',.)</span></label

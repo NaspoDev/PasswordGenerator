@@ -1,7 +1,10 @@
 // Imports
+// Feature swap manager
 import { generatorButtonClicked } from "./modules/feature-swap-manager.js";
 import { validatorButtonClicked } from "./modules/feature-swap-manager.js";
+// Generator
 import { updateSliderValue } from "./modules/generator.js";
+import { generatePassword } from "./modules/generator.js";
 
 // Element definitions
 // Buttons
@@ -29,10 +32,23 @@ export function initializeListeners() {
 
   // Input event
   addEventListener("input", (event) => {
-    // Range input handlers
+    // Range input
     if (event.target instanceof HTMLElement && event.target.id) {
       if (event.target.id in rangeInputHandlers) {
         rangeInputHandlers[event.target.id]();
+      }
+    }
+  });
+
+  // Generator form: Generate password when form is updated.
+  addEventListener("change", (event) => {
+    if (event.target instanceof HTMLInputElement) {
+      if (
+        event.target.form &&
+        event.target.form.id &&
+        event.target.form.id === "password-generator-form"
+      ) {
+        generatePassword();
       }
     }
   });

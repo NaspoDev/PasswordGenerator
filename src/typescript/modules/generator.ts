@@ -10,8 +10,12 @@ let lengthSlider: {
   element: document.getElementById("length-slider") as HTMLInputElement,
   valueDisplay: document.getElementById(
     "length-slider-value-display"
-  ) as HTMLInputElement,
+  ) as HTMLElement,
 };
+
+let pwdDisplayText: HTMLInputElement = document.getElementById(
+  "password-display-text"
+) as HTMLInputElement;
 
 // Password configuration settings
 let passwordConfig: { [key: string]: number | boolean } = {
@@ -38,22 +42,37 @@ export function updateSliderValue(): void {
 // Main password generation algorithm
 export function generatePassword(): void {
   let password: string = "";
+  let applicableValues: Array<string> = [];
 
+  applicableValues = getApplicableValues();
   for (let i = 0; i < (passwordConfig.length as number); i++) {
-    password += "a";
+    password += (Math.random() * applicableValues.length).toString();
   }
+
+  displayPassword(password);
 }
 
-// Returns a random value from applicable password values.
-function getRandomValue(): string {
-    let applicableValues: Array<string> = []; // DO I WANT TO REDEFINE THIS EVERY TIME?
-    switch (true) {
-        case passwordConfig.includeLetters -> applicableValues.concat(values.letters);
+// Returns an array with all applicable password values, based on passwordConfig.
+function getApplicableValues(): Array<string> {
+  let applicableValues: Array<string> = [];
 
-  for (let i = 0; i < values.length; i++) {
-    if (passwordConfig.includeLetters) {
-      return getRandomLetter();
-    }
+  if (passwordConfig.includeLetters) {
+    applicableValues.concat(values.letters);
   }
-  return "0";
+  if (passwordConfig.includeNumbers) {
+    applicableValues.concat(values.numbers);
+  }
+  if (passwordConfig.includeSymbols) {
+    applicableValues.concat(values.symbols);
+  }
+  if (passwordConfig.includeAmbiguous) {
+    applicableValues.concat(values.ambiguous);
+  }
+
+  return applicableValues;
+}
+
+// Updates the value of the password display text input element.
+function displayPassword(password: string): void {
+  pwdDisplayText.value = password;
 }
