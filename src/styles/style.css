@@ -161,6 +161,8 @@ label {
 .hero .background-card .feature-container .password-generator .password-display .password-display-text {
   font-size: 32px;
   color: #176b87;
+  border: none;
+  background-color: transparent;
 }
 .hero .background-card .feature-container .password-generator .password-display .password-refresh-icon {
   width: 30px;

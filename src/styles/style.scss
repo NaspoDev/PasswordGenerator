@@ -188,6 +188,8 @@ label {
           .password-display-text {
             font-size: 32px;
             color: $blue-color;
+            border: none;
+            background-color: transparent;
           }
 
           .password-refresh-icon {
