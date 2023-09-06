@@ -1,5 +1,5 @@
 // Imports
-import { initializeListeners } from "./listeners";
+import { initializeListeners } from "./listeners.js";
 
 // Main application functions on startup
 const APP = {

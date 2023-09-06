@@ -5,8 +5,9 @@
   "compilerOptions": {
     // Which version of ECMAScript to compile ts into. "ESNext" signifies the latest version.
     "target": "ESNext",
-    // Use standard js syntax.
-    "module": "commonjs",
+    // "commonjs" is the module system used in Node.js. "ESNext" is the latest version of ECMAScript.
+    // Use "commonjs" if you are developing a Node.js app. Use "ESNext" if you are targeting the browser directly (i.e website/webapp).
+    "module": "ESNext",
     // Where our compiled js files will be stored. Convention to put them in a folder called "dist". (Created automatically on first compile).
     "outDir": "src/dist",
     // Strict type checking.

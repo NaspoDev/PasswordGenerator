@@ -1,6 +1,6 @@
 // Imports
-import { generatorButtonClicked } from "./modules/feature-swap-manager";
-import { validatorButtonClicked } from "./modules/feature-swap-manager";
+import { generatorButtonClicked } from "./modules/feature-swap-manager.js";
+import { validatorButtonClicked } from "./modules/feature-swap-manager.js";
 
 // Element definitions
 const buttonHandlers: { [id: string]: () => void } = {
