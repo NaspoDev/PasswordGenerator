@@ -8,5 +8,9 @@ const validatorButton: HTMLButtonElement = document.getElementById(
   "validator-button"
 ) as HTMLButtonElement;
 
-const hiddenClass: String = "hidden"; // applied to hide elements
-const buttonSelectedClass: String = "selected"; // applied to selected button
+const hiddenClass: string = "hidden"; // applied to hide elements
+const buttonSelectedClass: string = "selected"; // applied to selected button
+
+export function generatorButtonClicked(): void {}
+
+export function validatorButtonClicked(): void {}
