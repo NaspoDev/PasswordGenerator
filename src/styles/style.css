@@ -147,7 +147,7 @@ label {
   padding-top: 50px;
 }
 .hero .background-card .feature-container .password-generator .password-display {
-  width: 70%;
+  width: 75%;
   height: auto;
   margin-bottom: 60px;
   background-color: #f7f7f7;
@@ -163,6 +163,11 @@ label {
   color: #176b87;
   border: none;
   background-color: transparent;
+}
+.hero .background-card .feature-container .password-generator .password-display .copy-icon {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
 }
 .hero .background-card .feature-container .password-generator .password-display .password-refresh-icon {
   width: 30px;

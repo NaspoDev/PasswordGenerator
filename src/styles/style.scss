@@ -177,7 +177,7 @@ label {
       .password-generator {
         // Password Display
         .password-display {
-          width: 70%;
+          width: 75%;
           height: auto;
           margin-bottom: 60px;
           background-color: $white-color;
@@ -190,6 +190,12 @@ label {
             color: $blue-color;
             border: none;
             background-color: transparent;
+          }
+
+          .copy-icon {
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
           }
 
           .password-refresh-icon {
