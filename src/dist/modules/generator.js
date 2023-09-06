@@ -28,11 +28,27 @@ let passwordConfig = {
 export function updateSliderValue() {
     lengthSlider.valueDisplay.innerHTML = lengthSlider.element.value;
 }
+export function canUncheck(checkbox) {
+    if (!checkbox.checked) {
+        return true;
+    }
+    let checkedCount = 0;
+    for (const key in passwordConfig) {
+        if (typeof passwordConfig[key]() === "boolean") {
+            if (passwordConfig[key]()) {
+                checkedCount++;
+            }
+        }
+    }
+    if (checkedCount >= 2) {
+        return true;
+    }
+    return false;
+}
 export function generatePassword() {
     let password = "";
     let applicableValues = [];
     applicableValues = getApplicableValues();
-    console.log(applicableValues);
     for (let i = 0; i < passwordConfig.length(); i++) {
         password +=
             applicableValues[Math.floor(Math.random() * applicableValues.length)];

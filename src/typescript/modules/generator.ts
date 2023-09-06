@@ -45,6 +45,39 @@ export function updateSliderValue(): void {
   lengthSlider.valueDisplay.innerHTML = lengthSlider.element.value;
 }
 
+// Ensures that at least one checkbox is checked at all times.
+// Returns true if the checkbox can be unchecked, false if it cannot.
+export function canUncheck(checkbox: HTMLInputElement): boolean {
+  // if the passed element is not a checkbox, throw an error
+  if (!(checkbox.type === "checkbox")) {
+    throw new Error("canUncheck() must be passed a checkbox element.");
+  }
+
+  // if the checkbox is already unchecked, return true
+  if (!checkbox.checked) {
+    return true;
+  }
+
+  // amount of checked checkboxes
+  let checkedCount: number = 0;
+
+  // count the amount of checked checkboxes
+  for (const key in passwordConfig) {
+    if (typeof passwordConfig[key]() === "boolean") {
+      if (passwordConfig[key]()) {
+        checkedCount++;
+      }
+    }
+  }
+
+  // if there are at least two checked checkboxes, return true
+  if (checkedCount >= 2) {
+    return true;
+  }
+
+  return false;
+}
+
 // Main password generation algorithm
 export function generatePassword(): void {
   let password: string = "";
