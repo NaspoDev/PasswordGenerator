@@ -18,7 +18,7 @@ const rangeInputHandlers: { [id: string]: () => void } = {
   "length-slider": updateSliderValue,
 };
 
-export function initializeListeners() {
+export function addListeners() {
   // Click event
   addEventListener("click", (event) => {
     // if the target is an HTML element and has an id
