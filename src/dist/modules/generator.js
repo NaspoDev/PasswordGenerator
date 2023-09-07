@@ -29,6 +29,9 @@ export function updateSliderValue() {
     lengthSlider.valueDisplay.innerHTML = lengthSlider.element.value;
 }
 export function canUncheck(checkbox) {
+    if (!(checkbox.type === "checkbox")) {
+        throw new Error("canUncheck() must be passed a checkbox element.");
+    }
     if (!checkbox.checked) {
         return true;
     }
