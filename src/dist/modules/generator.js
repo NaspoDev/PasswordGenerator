@@ -4,6 +4,7 @@ let lengthSlider = {
     valueDisplay: document.getElementById("length-slider-value-display"),
 };
 let pwdDisplayText = document.getElementById("password-display-text");
+let selectOptionPrompt = "Select at least one option.";
 let passwordConfig = {
     length: () => {
         return parseInt(lengthSlider.element.value);
@@ -28,35 +29,20 @@ let passwordConfig = {
 export function updateSliderValue() {
     lengthSlider.valueDisplay.innerHTML = lengthSlider.element.value;
 }
-export function canUncheck(checkbox) {
-    if (!(checkbox.type === "checkbox")) {
-        throw new Error("canUncheck() must be passed a checkbox element.");
-    }
-    if (!checkbox.checked) {
-        return true;
-    }
-    let checkedCount = 0;
-    for (const key in passwordConfig) {
-        if (typeof passwordConfig[key]() === "boolean") {
-            if (passwordConfig[key]()) {
-                checkedCount++;
-            }
-        }
-    }
-    if (checkedCount >= 2) {
-        return true;
-    }
-    return false;
-}
 export function generatePassword() {
     let password = "";
     let applicableValues = [];
     applicableValues = getApplicableValues();
-    for (let i = 0; i < passwordConfig.length(); i++) {
-        password +=
-            applicableValues[Math.floor(Math.random() * applicableValues.length)];
+    if (applicableValues.length === 0) {
+        pwdDisplayText.value = selectOptionPrompt;
     }
-    displayPassword(password);
+    else {
+        for (let i = 0; i < passwordConfig.length(); i++) {
+            password +=
+                applicableValues[Math.floor(Math.random() * applicableValues.length)];
+        }
+        displayPassword(password);
+    }
 }
 function getApplicableValues() {
     let applicableValues = [];

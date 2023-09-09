@@ -17,6 +17,9 @@ let pwdDisplayText: HTMLInputElement = document.getElementById(
   "password-display-text"
 ) as HTMLInputElement;
 
+// Other vars
+let selectOptionPrompt: string = "Select at least one option.";
+
 // Password configuration settings
 let passwordConfig: { [key: string]: () => number | boolean } = {
   length: () => {
@@ -45,51 +48,25 @@ export function updateSliderValue(): void {
   lengthSlider.valueDisplay.innerHTML = lengthSlider.element.value;
 }
 
-// Ensures that at least one checkbox is checked at all times.
-// Returns true if the checkbox can be unchecked, false if it cannot.
-export function canUncheck(checkbox: HTMLInputElement): boolean {
-  // if the passed element is not a checkbox, throw an error
-  if (!(checkbox.type === "checkbox")) {
-    throw new Error("canUncheck() must be passed a checkbox element.");
-  }
-
-  // if the checkbox is already unchecked, return true
-  if (!checkbox.checked) {
-    return true;
-  }
-
-  // amount of checked checkboxes
-  let checkedCount: number = 0;
-
-  // count the amount of checked checkboxes
-  for (const key in passwordConfig) {
-    if (typeof passwordConfig[key]() === "boolean") {
-      if (passwordConfig[key]()) {
-        checkedCount++;
-      }
-    }
-  }
-
-  // if there are at least two checked checkboxes, return true
-  if (checkedCount >= 2) {
-    return true;
-  }
-
-  return false;
-}
-
 // Main password generation algorithm
 export function generatePassword(): void {
   let password: string = "";
   let applicableValues: Array<string> = [];
 
   applicableValues = getApplicableValues();
-  for (let i = 0; i < (passwordConfig.length() as number); i++) {
-    password +=
-      applicableValues[Math.floor(Math.random() * applicableValues.length)];
-  }
 
-  displayPassword(password);
+  // if there are no options selected, prompt the user to select at least one option
+  if (applicableValues.length === 0) {
+    pwdDisplayText.value = selectOptionPrompt;
+  } else {
+    // generate a password
+    for (let i = 0; i < (passwordConfig.length() as number); i++) {
+      password +=
+        applicableValues[Math.floor(Math.random() * applicableValues.length)];
+    }
+
+    displayPassword(password);
+  }
 }
 
 // Returns an array with all applicable password values, based on passwordConfig.
