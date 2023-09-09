@@ -2,9 +2,12 @@ import { generatorButtonClicked } from "./modules/feature-swap-manager.js";
 import { validatorButtonClicked } from "./modules/feature-swap-manager.js";
 import { updateSliderValue } from "./modules/generator.js";
 import { generatePassword } from "./modules/generator.js";
+import { copyPasswordToClipboard } from "./modules/generator.js";
 const buttonHandlers = {
     "generator-button": generatorButtonClicked,
     "validator-button": validatorButtonClicked,
+    "copy-password-button": copyPasswordToClipboard,
+    "refresh-password-button": generatePassword,
 };
 const rangeInputHandlers = {
     "length-slider": updateSliderValue,

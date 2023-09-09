@@ -63,3 +63,6 @@ function getApplicableValues() {
 function displayPassword(password) {
     pwdDisplayText.value = password;
 }
+export function copyPasswordToClipboard() {
+    navigator.clipboard.writeText(pwdDisplayText.value);
+}

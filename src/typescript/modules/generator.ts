@@ -93,3 +93,8 @@ function getApplicableValues(): Array<string> {
 function displayPassword(password: string): void {
   pwdDisplayText.value = password;
 }
+
+// Copies the password to the clipboard.
+export function copyPasswordToClipboard(): void {
+  navigator.clipboard.writeText(pwdDisplayText.value);
+}

@@ -5,12 +5,15 @@ import { validatorButtonClicked } from "./modules/feature-swap-manager.js";
 // Generator
 import { updateSliderValue } from "./modules/generator.js";
 import { generatePassword } from "./modules/generator.js";
+import { copyPasswordToClipboard } from "./modules/generator.js";
 
 // Element definitions
 // Buttons
 const buttonHandlers: { [id: string]: () => void } = {
   "generator-button": generatorButtonClicked,
   "validator-button": validatorButtonClicked,
+  "copy-password-button": copyPasswordToClipboard,
+  "refresh-password-button": generatePassword,
 };
 
 // Sliders
