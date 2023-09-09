@@ -32,4 +32,7 @@ export function addListeners() {
             }
         }
     });
+    addEventListener("DOMContentLoaded", () => {
+        generatePassword();
+    });
 }

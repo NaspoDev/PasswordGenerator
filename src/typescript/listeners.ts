@@ -52,4 +52,9 @@ export function addListeners() {
       }
     }
   });
+
+  // DOMContentLoaded event
+  addEventListener("DOMContentLoaded", () => {
+    generatePassword();
+  });
 }
