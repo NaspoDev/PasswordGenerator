@@ -174,23 +174,24 @@ label {
 }
 .hero .background-card .feature-container .password-generator .password-display .copy-button-container .tooltip {
   position: absolute;
-  top: -50px;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100px;
-  height: 40px;
+  height: 50px;
   background-color: #303030;
   border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
-  z-index: 2;
+  z-index: 1;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
-.hero .background-card .feature-container .password-generator .password-display .copy-button-container::hover .tooltip {
+.hero .background-card .feature-container .password-generator .password-display .copy-button-container:hover .tooltip {
   opacity: 1;
 }
 .hero .background-card .feature-container .password-generator .password-display .refresh-password-button-container {
@@ -200,6 +201,28 @@ label {
   width: 30px;
   height: 30px;
   cursor: pointer;
+}
+.hero .background-card .feature-container .password-generator .password-display .refresh-password-button-container .tooltip {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  background-color: #303030;
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  top: -64px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.hero .background-card .feature-container .password-generator .password-display .refresh-password-button-container:hover .tooltip {
+  opacity: 1;
 }
 .hero .background-card .feature-container .password-generator .password-generator-form .form-field {
   margin-bottom: 30px;
