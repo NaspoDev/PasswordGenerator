@@ -47,7 +47,13 @@ export function generatePassword() {
 function getApplicableValues() {
     let applicableValues = [];
     if (passwordConfig.includeLetters()) {
-        applicableValues = [...applicableValues, ...values.letters];
+        let letters = [...values.letters];
+        for (let i = 0; i < letters.length; i++) {
+            if (Math.random() < 0.5) {
+                letters[i] = letters[i].toUpperCase();
+            }
+        }
+        applicableValues = [...applicableValues, ...letters];
     }
     if (passwordConfig.includeNumbers()) {
         applicableValues = [...applicableValues, ...values.numbers];

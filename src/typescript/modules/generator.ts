@@ -74,7 +74,14 @@ function getApplicableValues(): Array<string> {
   let applicableValues: Array<string> = [];
 
   if (passwordConfig.includeLetters()) {
-    applicableValues = [...applicableValues, ...values.letters];
+    // Randomly capitalize some letters, then add to applicableValues.
+    let letters: string[] = [...values.letters];
+    for (let i = 0; i < letters.length; i++) {
+      if (Math.random() < 0.5) {
+        letters[i] = letters[i].toUpperCase();
+      }
+    }
+    applicableValues = [...applicableValues, ...letters];
   }
   if (passwordConfig.includeNumbers()) {
     applicableValues = [...applicableValues, ...values.numbers];
