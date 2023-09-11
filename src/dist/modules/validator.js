@@ -7,6 +7,12 @@ const strengthValueDescriptor = {
     [3]: "Strong",
     [4]: "Very Strong",
 };
+const strengthValueClass = {
+    [1]: "strength-value-1",
+    [2]: "strength-value-2",
+    [3]: "strength-value-3",
+    [4]: "strength-value-4",
+};
 const strengthCriteria = {
     length: (password) => {
         return examineLength(password);
@@ -33,14 +39,22 @@ const strengthCriteria = {
 export function validatePassword() {
     let strengthScore = 0;
     let password = passwordInput.value;
+    if (password.length === 0) {
+        displayStrengthValue("...");
+        return;
+    }
     for (const criteria in strengthCriteria) {
         strengthScore += strengthCriteria[criteria](password);
     }
     strengthScore = Math.round(strengthScore / Object.keys(strengthCriteria).length);
-    displayStrengthValue(strengthValueDescriptor[strengthScore]);
+    displayStrengthValue(strengthValueDescriptor[strengthScore], strengthValueClass[strengthScore]);
 }
-function displayStrengthValue(strengthValue) {
-    strengthValueElement.textContent = strengthValue;
+function displayStrengthValue(strengthValueDescriptor, strengthValueClass) {
+    strengthValueElement.textContent = strengthValueDescriptor;
+    strengthValueElement.className = "";
+    if (strengthValueClass) {
+        strengthValueElement.classList.add(strengthValueClass);
+    }
 }
 function examineLength(password) {
     let length = password.length;

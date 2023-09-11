@@ -28,6 +28,14 @@ const strengthValueDescriptor: { [key in StrengthValue]: string } = {
   [StrengthValue.VeryStrong]: "Very Strong",
 };
 
+// Strength value CSS classes
+const strengthValueClass: { [key in StrengthValue]: string } = {
+  [StrengthValue.Weak]: "strength-value-1",
+  [StrengthValue.Moderate]: "strength-value-2",
+  [StrengthValue.Strong]: "strength-value-3",
+  [StrengthValue.VeryStrong]: "strength-value-4",
+};
+
 // Strength criteria to examine, with their respective functions.
 const strengthCriteria: { [key: string]: (password: string) => number } = {
   length: (password: string): number => {
@@ -58,6 +66,12 @@ export function validatePassword(): void {
   let strengthScore: number = 0;
   let password: string = passwordInput.value;
 
+  // If the password is empty, display "..." as the strength value.
+  if (password.length === 0) {
+    displayStrengthValue("...");
+    return;
+  }
+
   // Examine each criteria and add to the strength score
   for (const criteria in strengthCriteria) {
     strengthScore += strengthCriteria[criteria](password);
@@ -67,11 +81,21 @@ export function validatePassword(): void {
   strengthScore = Math.round(
     strengthScore / Object.keys(strengthCriteria).length
   );
-  displayStrengthValue(strengthValueDescriptor[strengthScore as StrengthValue]);
+  displayStrengthValue(
+    strengthValueDescriptor[strengthScore as StrengthValue],
+    strengthValueClass[strengthScore as StrengthValue]
+  );
 }
 
-function displayStrengthValue(strengthValue: string): void {
-  strengthValueElement.textContent = strengthValue;
+function displayStrengthValue(
+  strengthValueDescriptor: string,
+  strengthValueClass?: string
+): void {
+  strengthValueElement.textContent = strengthValueDescriptor;
+  strengthValueElement.className = ""; // clear the class list
+  if (strengthValueClass) {
+    strengthValueElement.classList.add(strengthValueClass); // add the new class
+  }
 }
 
 // === Strength criteria examine functions ===
