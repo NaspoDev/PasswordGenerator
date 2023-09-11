@@ -6,6 +6,8 @@ import { validatorButtonClicked } from "./modules/feature-swap-manager.js";
 import { updateSliderValue } from "./modules/generator.js";
 import { generatePassword } from "./modules/generator.js";
 import { copyPasswordToClipboard } from "./modules/generator.js";
+// Validator
+import { validatePassword } from "./modules/validator.js";
 
 // Element definitions
 // Buttons
@@ -16,9 +18,10 @@ const buttonHandlers: { [id: string]: () => void } = {
   "refresh-password-button": generatePassword,
 };
 
-// Sliders
-const rangeInputHandlers: { [id: string]: () => void } = {
+// Input elements
+const inputHandlers: { [id: string]: () => void } = {
   "length-slider": updateSliderValue,
+  "password-input": validatePassword,
 };
 
 export function addListeners() {
@@ -37,10 +40,12 @@ export function addListeners() {
   addEventListener("input", (event) => {
     // Range input
     if (event.target instanceof HTMLElement && event.target.id) {
-      if (event.target.id in rangeInputHandlers) {
-        rangeInputHandlers[event.target.id]();
+      if (event.target.id in inputHandlers) {
+        inputHandlers[event.target.id]();
       }
     }
+
+    // Text input
   });
 
   // Change event
