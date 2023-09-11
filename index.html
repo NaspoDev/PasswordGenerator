@@ -49,18 +49,26 @@
                     name="generatedPassword"
                   />
                 </form>
-                <img
-                  src="/src/assets/images/copy.png"
-                  alt="Copy to Clipboard"
-                  class="copy-icon"
-                  id="copy-password-button"
-                />
-                <img
-                  src="/src/assets/images/refresh_icon.png"
-                  alt="Refresh"
-                  class="password-refresh-icon"
-                  id="refresh-password-button"
-                />
+                <div class="copy-button-container">
+                  <img
+                    src="/src/assets/images/copy.png"
+                    alt="Copy to Clipboard"
+                    class="copy-button"
+                    id="copy-password-button"
+                  />
+
+                  <div class="tooltip">
+                    <p>Copy-to-clipboard</p>
+                  </div>
+                </div>
+                <div class="refresh-password-button-container">
+                  <img
+                    src="/src/assets/images/refresh_icon.png"
+                    alt="Refresh"
+                    class="refresh-password-button"
+                    id="refresh-password-button"
+                  />
+                </div>
               </div>
 
               <!-- Generator Form -->

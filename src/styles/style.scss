@@ -32,6 +32,7 @@ $white-color: #f7f7f7;
 // Other colors
 $grey-color: #a9a9a9;
 $light-grey-color: #d3d3d3;
+$black-color: #303030;
 
 body {
   overflow: hidden;
@@ -192,16 +193,47 @@ label {
             background-color: transparent;
           }
 
-          .copy-icon {
-            width: 35px;
-            height: 35px;
-            cursor: pointer;
+          .copy-button-container {
+            position: relative;
+
+            .copy-button {
+              width: 35px;
+              height: 35px;
+              cursor: pointer;
+            }
+
+            .tooltip {
+              position: absolute;
+              top: -50px;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 100px;
+              height: 40px;
+              background-color: $black-color;
+              border-radius: 10px;
+              @include flexCenter(row, center, center);
+              font-size: 16px;
+              z-index: 2;
+
+              opacity: 0;
+              transition: opacity 0.3s ease-in-out;
+            }
+
+            &::hover {
+              .tooltip {
+                opacity: 1;
+              }
+            }
           }
 
-          .password-refresh-icon {
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
+          .refresh-password-button-container {
+            position: relative;
+
+            .refresh-password-button {
+              width: 30px;
+              height: 30px;
+              cursor: pointer;
+            }
           }
         }
 

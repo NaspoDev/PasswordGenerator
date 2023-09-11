@@ -164,12 +164,39 @@ label {
   border: none;
   background-color: transparent;
 }
-.hero .background-card .feature-container .password-generator .password-display .copy-icon {
+.hero .background-card .feature-container .password-generator .password-display .copy-button-container {
+  position: relative;
+}
+.hero .background-card .feature-container .password-generator .password-display .copy-button-container .copy-button {
   width: 35px;
   height: 35px;
   cursor: pointer;
 }
-.hero .background-card .feature-container .password-generator .password-display .password-refresh-icon {
+.hero .background-card .feature-container .password-generator .password-display .copy-button-container .tooltip {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 40px;
+  background-color: #303030;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.hero .background-card .feature-container .password-generator .password-display .copy-button-container::hover .tooltip {
+  opacity: 1;
+}
+.hero .background-card .feature-container .password-generator .password-display .refresh-password-button-container {
+  position: relative;
+}
+.hero .background-card .feature-container .password-generator .password-display .refresh-password-button-container .refresh-password-button {
   width: 30px;
   height: 30px;
   cursor: pointer;
