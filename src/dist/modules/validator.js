@@ -36,7 +36,7 @@ export function validatePassword() {
     for (const criteria in strengthCriteria) {
         strengthScore += strengthCriteria[criteria](password);
     }
-    strengthScore = Math.ceil(strengthScore / Object.keys(strengthCriteria).length);
+    strengthScore = Math.round(strengthScore / Object.keys(strengthCriteria).length);
     displayStrengthValue(strengthValueDescriptor[strengthScore]);
 }
 function displayStrengthValue(strengthValue) {
@@ -114,8 +114,12 @@ function examineSymbols(password) {
     return 1;
 }
 function examineAmbiguous(password) {
-    let ambiguous = password.match(new RegExp(`[${values.ambiguous.join("")}]`, "g"))?.length ||
-        0;
+    let ambiguous = 0;
+    for (const character of password) {
+        if (values.ambiguous.includes(character)) {
+            ambiguous++;
+        }
+    }
     switch (true) {
         case ambiguous === 0:
             return 1;
@@ -130,15 +134,17 @@ function examineAmbiguous(password) {
 }
 function examineRepeated(password) {
     let repeated = password.match(/(.)\1{1,}/g)?.length || 0;
-    switch (true) {
-        case repeated > 3:
-            return 1;
-        case repeated > 2:
-            return 2;
-        case repeated > 1:
-            return 3;
-        case repeated == 0:
-            return 4;
+    if (password.length >= 8) {
+        switch (true) {
+            case repeated > 3:
+                return 1;
+            case repeated > 2:
+                return 2;
+            case repeated > 1:
+                return 3;
+            case repeated == 0:
+                return 4;
+        }
     }
     return 1;
 }

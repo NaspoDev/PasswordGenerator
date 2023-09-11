@@ -64,7 +64,7 @@ export function validatePassword(): void {
   }
 
   // Calculate the strength score and display it as a strength value.
-  strengthScore = Math.ceil(
+  strengthScore = Math.round(
     strengthScore / Object.keys(strengthCriteria).length
   );
   displayStrengthValue(strengthValueDescriptor[strengthScore as StrengthValue]);
@@ -145,6 +145,7 @@ function examineSymbols(password: string): StrengthValue {
   let symbols: number =
     password.match(new RegExp(`[${values.symbols.join("")}]`, "g"))?.length ||
     0;
+
   switch (true) {
     case symbols === 0:
       return StrengthValue.Weak;
@@ -160,9 +161,14 @@ function examineSymbols(password: string): StrengthValue {
 
 // Examine the ambiguous characters of the password, return a strength value.
 function examineAmbiguous(password: string): StrengthValue {
-  let ambiguous: number =
-    password.match(new RegExp(`[${values.ambiguous.join("")}]`, "g"))?.length ||
-    0;
+  let ambiguous: number = 0;
+  // count the number of ambiguous characters in the password
+  for (const character of password) {
+    if (values.ambiguous.includes(character)) {
+      ambiguous++;
+    }
+  }
+
   switch (true) {
     case ambiguous === 0:
       return StrengthValue.Weak;
@@ -177,17 +183,23 @@ function examineAmbiguous(password: string): StrengthValue {
 }
 
 // Examine the repeated characters of the password, return a strength value.
+// Only examined if the password is 8 characters or longer.
 function examineRepeated(password: string): StrengthValue {
   let repeated: number = password.match(/(.)\1{1,}/g)?.length || 0;
-  switch (true) {
-    case repeated > 3:
-      return StrengthValue.Weak;
-    case repeated > 2:
-      return StrengthValue.Moderate;
-    case repeated > 1:
-      return StrengthValue.Strong;
-    case repeated == 0:
-      return StrengthValue.VeryStrong;
+
+  // if the password is 8 characters or longer, examine it.
+  if (password.length >= 8) {
+    switch (true) {
+      case repeated > 3:
+        return StrengthValue.Weak;
+      case repeated > 2:
+        return StrengthValue.Moderate;
+      case repeated > 1:
+        return StrengthValue.Strong;
+      case repeated == 0:
+        return StrengthValue.VeryStrong;
+    }
   }
+
   return StrengthValue.Weak;
 }
