@@ -1,6 +1,6 @@
 // Password Generator Module
 
-import { values } from "./values.js";
+import { values } from "../utility/password-values.js";
 
 // Capturing Elements
 let lengthSlider: {
