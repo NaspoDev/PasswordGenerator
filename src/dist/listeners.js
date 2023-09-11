@@ -3,14 +3,16 @@ import { validatorButtonClicked } from "./modules/feature-swap-manager.js";
 import { updateSliderValue } from "./modules/generator.js";
 import { generatePassword } from "./modules/generator.js";
 import { copyPasswordToClipboard } from "./modules/generator.js";
+import { validatePassword } from "./modules/validator.js";
 const buttonHandlers = {
     "generator-button": generatorButtonClicked,
     "validator-button": validatorButtonClicked,
     "copy-password-button": copyPasswordToClipboard,
     "refresh-password-button": generatePassword,
 };
-const rangeInputHandlers = {
+const inputHandlers = {
     "length-slider": updateSliderValue,
+    "password-input": validatePassword,
 };
 export function addListeners() {
     addEventListener("click", (event) => {
@@ -21,9 +23,10 @@ export function addListeners() {
         }
     });
     addEventListener("input", (event) => {
-        if (event.target instanceof HTMLElement && event.target.id) {
-            if (event.target.id in rangeInputHandlers) {
-                rangeInputHandlers[event.target.id]();
+        let target = event.target;
+        if (target instanceof HTMLElement && target.id) {
+            if (target.id in inputHandlers) {
+                inputHandlers[target.id]();
             }
         }
     });

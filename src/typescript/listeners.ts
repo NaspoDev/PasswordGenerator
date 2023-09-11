@@ -38,14 +38,14 @@ export function addListeners() {
 
   // Input event
   addEventListener("input", (event) => {
-    // Range input
-    if (event.target instanceof HTMLElement && event.target.id) {
-      if (event.target.id in inputHandlers) {
-        inputHandlers[event.target.id]();
+    let target = event.target;
+
+    if (target instanceof HTMLElement && target.id) {
+      // Input handlers
+      if (target.id in inputHandlers) {
+        inputHandlers[target.id]();
       }
     }
-
-    // Text input
   });
 
   // Change event

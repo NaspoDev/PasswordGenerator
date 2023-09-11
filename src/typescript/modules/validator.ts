@@ -62,6 +62,16 @@ export function validatePassword(): void {
   for (const criteria in strengthCriteria) {
     strengthScore += strengthCriteria[criteria](password);
   }
+
+  // Calculate the strength score and display it as a strength value.
+  strengthScore = Math.ceil(
+    strengthScore / Object.keys(strengthCriteria).length
+  );
+  displayStrengthValue(strengthValueDescriptor[strengthScore as StrengthValue]);
+}
+
+function displayStrengthValue(strengthValue: string): void {
+  strengthValueElement.textContent = strengthValue;
 }
 
 // === Strength criteria examine functions ===

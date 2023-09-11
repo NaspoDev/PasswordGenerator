@@ -1,4 +1,4 @@
-import { values } from "./values.js";
+import { values } from "../utility/password-values.js";
 let lengthSlider = {
     element: document.getElementById("length-slider"),
     valueDisplay: document.getElementById("length-slider-value-display"),
