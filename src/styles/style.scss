@@ -395,7 +395,7 @@ label {
   .header {
     height: 15vh;
     .inner-header {
-      width: 95%;
+      width: 90%;
 
       h1 {
         font-size: 36px;
@@ -417,6 +417,7 @@ label {
     height: 75vh;
     .background-card {
       width: 95%;
+      overflow: hidden;
 
       .feature-container {
         // Password Generator
@@ -433,6 +434,10 @@ label {
                 width: 100%;
               }
             }
+          }
+
+          .password-generator-form {
+            overflow: scroll;
           }
         }
 

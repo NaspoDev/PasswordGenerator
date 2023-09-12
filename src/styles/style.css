@@ -339,7 +339,7 @@ label {
     height: 15vh;
   }
   .header .inner-header {
-    width: 95%;
+    width: 90%;
   }
   .header .inner-header h1 {
     font-size: 36px;
@@ -355,6 +355,7 @@ label {
   }
   .hero .background-card {
     width: 95%;
+    overflow: hidden;
   }
   .hero .background-card .feature-container .password-generator .password-display {
     width: 100%;
@@ -366,6 +367,9 @@ label {
   .hero .background-card .feature-container .password-generator .password-display .password-display-form .password-display-text {
     font-size: 24px;
     width: 100%;
+  }
+  .hero .background-card .feature-container .password-generator .password-generator-form {
+    overflow: scroll;
   }
   .hero .background-card .feature-container .password-validator .validator-heading {
     text-align: center;
