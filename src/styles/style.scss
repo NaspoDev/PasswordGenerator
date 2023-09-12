@@ -216,11 +216,15 @@ label {
           @include flexCenter(row, space-between, center);
           padding: 10px 15px;
 
-          .password-display-text {
-            font-size: 32px;
-            color: $blue-color;
-            border: none;
-            background-color: transparent;
+          .password-display-form {
+            width: 80%;
+            .password-display-text {
+              width: 100%;
+              font-size: 32px;
+              color: $blue-color;
+              border: none;
+              background-color: transparent;
+            }
           }
 
           .copy-button-container {
@@ -381,4 +385,74 @@ label {
 // applied to an element to hide it.
 .hidden {
   display: none !important;
+}
+
+// Responsive Design
+
+@media screen and (max-width: 1200px) {
+  // Header
+
+  .header {
+    height: 15vh;
+    .inner-header {
+      width: 95%;
+
+      h1 {
+        font-size: 36px;
+      }
+
+      img {
+        width: 100px;
+      }
+
+      .hero-heading {
+        display: none;
+      }
+    }
+  }
+
+  // Hero
+
+  .hero {
+    height: 75vh;
+    .background-card {
+      width: 95%;
+
+      .feature-container {
+        // Password Generator
+        .password-generator {
+          .password-display {
+            width: 100%;
+            padding: 10px 5px;
+
+            .password-display-form {
+              width: 80%;
+
+              .password-display-text {
+                font-size: 24px;
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        // Password Validator
+        .password-validator {
+          .validator-heading {
+            text-align: center;
+          }
+
+          .password-validator-form {
+            width: 95%;
+          }
+        }
+      }
+    }
+  }
+
+  // Footer
+
+  .footer {
+    height: 10vh;
+  }
 }

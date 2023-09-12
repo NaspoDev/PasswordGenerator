@@ -158,7 +158,11 @@ label {
   align-items: center;
   padding: 10px 15px;
 }
-.hero .background-card .feature-container .password-generator .password-display .password-display-text {
+.hero .background-card .feature-container .password-generator .password-display .password-display-form {
+  width: 80%;
+}
+.hero .background-card .feature-container .password-generator .password-display .password-display-form .password-display-text {
+  width: 100%;
   font-size: 32px;
   color: #176b87;
   border: none;
@@ -328,4 +332,48 @@ label {
 
 .hidden {
   display: none !important;
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+    height: 15vh;
+  }
+  .header .inner-header {
+    width: 95%;
+  }
+  .header .inner-header h1 {
+    font-size: 36px;
+  }
+  .header .inner-header img {
+    width: 100px;
+  }
+  .header .inner-header .hero-heading {
+    display: none;
+  }
+  .hero {
+    height: 75vh;
+  }
+  .hero .background-card {
+    width: 95%;
+  }
+  .hero .background-card .feature-container .password-generator .password-display {
+    width: 100%;
+    padding: 10px 5px;
+  }
+  .hero .background-card .feature-container .password-generator .password-display .password-display-form {
+    width: 80%;
+  }
+  .hero .background-card .feature-container .password-generator .password-display .password-display-form .password-display-text {
+    font-size: 24px;
+    width: 100%;
+  }
+  .hero .background-card .feature-container .password-validator .validator-heading {
+    text-align: center;
+  }
+  .hero .background-card .feature-container .password-validator .password-validator-form {
+    width: 95%;
+  }
+  .footer {
+    height: 10vh;
+  }
 }/*# sourceMappingURL=style.css.map */
