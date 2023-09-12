@@ -278,6 +278,9 @@ label {
   border: none;
   border-radius: 50%;
 }
+.hero .background-card .feature-container .password-validator .validator-heading {
+  margin-bottom: 50px;
+}
 .hero .background-card .feature-container .password-validator .password-validator-form {
   width: 70%;
 }
@@ -295,7 +298,7 @@ label {
   padding: 10px 15px;
 }
 .hero .background-card .feature-container .password-validator .strength-reading {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .hero .background-card .feature-container .password-validator .strength-reading .strength-value-1 {
   color: rgb(189, 66, 66);

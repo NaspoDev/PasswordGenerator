@@ -315,6 +315,10 @@ label {
       }
 
       .password-validator {
+        .validator-heading {
+          margin-bottom: 50px;
+        }
+
         .password-validator-form {
           width: 70%;
         }
@@ -333,7 +337,7 @@ label {
 
         // Strength Reading
         .strength-reading {
-          margin-top: 40px;
+          margin-top: 20px;
 
           // Strength values applied through ts
           // weak
