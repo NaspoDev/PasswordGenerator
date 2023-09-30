@@ -380,4 +380,12 @@ label {
   .footer {
     height: 10vh;
   }
+}
+@media screen and (max-height: 900px) {
+  .header .inner-header .left .hero-heading {
+    display: none;
+  }
+  .hero .background-card .feature-container .password-generator .password-generator-form {
+    overflow: scroll;
+  }
 }/*# sourceMappingURL=style.css.map */
